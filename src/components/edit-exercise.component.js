@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import TextField from "@mui/material/TextField";
 import MenuItem from "@mui/material/MenuItem";
@@ -164,13 +163,6 @@ export default class EditExercise extends Component {
                 onChange={this.onChangeDuration}
                 error={!this.state.duration}
               ></TextField>
-            </div>
-            <label style={{ margin: "0 0.5%" }}>Date</label>
-            <div style={{ margin: "1% 0.5%" }}>
-              <DatePicker
-                selected={this.state.date}
-                onChange={this.onChangeDate}
-              />
             </div>
             <Snackbar
               open={this.state.open}
