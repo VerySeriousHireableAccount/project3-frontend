@@ -58,7 +58,7 @@ export default class CreateUser extends Component {
           noValidate
           autoComplete="off"
         >
-          <form onSubmit={this.onSubmit}>
+          <div>
             <div>
               <TextField
                 required
@@ -75,6 +75,7 @@ export default class CreateUser extends Component {
               variant="contained"
               type="submit"
               style={{ margin: "1% 0.5%", backgroundColor: "#f8d7e8" }}
+              onClick={this.onSubmit}
             >
               <Typography
                 sx={{
@@ -83,9 +84,20 @@ export default class CreateUser extends Component {
               >
                 Add Student
               </Typography>
-              <Snackbar
-                open={this.state.open}
-                autoHideDuration={6000}
+            </Button>
+            <Snackbar
+              open={this.state.open}
+              autoHideDuration={6000}
+              onClose={(reason) => {
+                if (reason === "clickaway") {
+                  return;
+                }
+                this.setState({
+                  open: false,
+                });
+              }}
+            >
+              <Alert
                 onClose={(reason) => {
                   if (reason === "clickaway") {
                     return;
@@ -94,24 +106,13 @@ export default class CreateUser extends Component {
                     open: false,
                   });
                 }}
+                severity="success"
+                sx={{ width: "100%" }}
               >
-                <Alert
-                  onClose={(reason) => {
-                    if (reason === "clickaway") {
-                      return;
-                    }
-                    this.setState({
-                      open: false,
-                    });
-                  }}
-                  severity="success"
-                  sx={{ width: "100%" }}
-                >
-                  New Student Added Successfully!
-                </Alert>
-              </Snackbar>
-            </Button>
-          </form>
+                New Student Added Successfully!
+              </Alert>
+            </Snackbar>
+          </div>
         </Box>
       </div>
     );
