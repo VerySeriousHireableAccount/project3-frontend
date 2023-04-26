@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import "react-datepicker/dist/react-datepicker.css";
 import TextField from "@mui/material/TextField";
 import MenuItem from "@mui/material/MenuItem";
 import Box from "@mui/material/Box";
