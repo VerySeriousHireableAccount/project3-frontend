@@ -104,7 +104,7 @@ export default class CreateExercise extends Component {
           noValidate
           autoComplete="off"
         >
-          <form onSubmit={this.onSubmit}>
+          <div>
             <div className="form-group">
               <TextField
                 id="outlined-select-currency"
@@ -177,6 +177,7 @@ export default class CreateExercise extends Component {
               variant="contained"
               type="submit"
               style={{ margin: "1% 0.5%", backgroundColor: "#f8d7e8" }}
+              onClick={this.onSubmit}
             >
               <Typography
                 sx={{
@@ -186,7 +187,7 @@ export default class CreateExercise extends Component {
                 Create Exercise Log
               </Typography>
             </Button>
-          </form>
+          </div>
         </Box>
       </div>
     );
